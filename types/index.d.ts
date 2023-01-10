@@ -2516,6 +2516,7 @@ export declare namespace Knex {
         storageEngineIndexType?: string;
         deferrable?: deferrableType;
         useConstraint?: boolean;
+        predicate?: QueryBuilder;
       }>
     ): TableBuilder;
     /** @deprecated */
@@ -2719,6 +2720,7 @@ export declare namespace Knex {
     searchPath?: string | readonly string[];
     asyncStackTraces?: boolean;
     log?: Logger;
+    compileSqlOnError?: boolean;
   }
 
   type StaticConnectionConfig =
@@ -3026,6 +3028,7 @@ export declare namespace Knex {
     connectionTimeoutMillis?: number;
     types?: PgCustomTypesConfig;
     options?: string;
+    expirationChecker?(): boolean;
   }
 
   type PgGetTypeParser = (oid: number, format: string) => any;
